@@ -3,6 +3,11 @@
 
 ## Feature：automatically build java development environment in ubuntu desktop
 
+## What is needed?
+## jdk-8u101-linux-x64.tar.gz
+## eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
+## Also, you can use other source package to replace them, just need to change the name in the dockerfile
+
 ## steps：
 ## First, add 163 source list
 
