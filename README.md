@@ -1,4 +1,4 @@
-# dockerfile to build eclipse
+# Dockerfile to build eclipse
 
 
 ## Feature：automatically build java development environment in ubuntu desktop
