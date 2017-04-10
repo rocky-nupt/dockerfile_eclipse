@@ -20,9 +20,9 @@ COPY jdk-8u101-linux-x64.tar.gz /jdk/
 WORKDIR /jdk/
 RUN tar zxvf jdk-8u101-linux-x64.tar.gz -C /jdk/
 RUN mv /jdk/jdk1.8.0_101/* /jdk && rm -rf /jdk/jdk1.8.0_101
-#RUN echo "export JAVA_HOME=/jdk">>/etc/profile
-#RUN echo "export CLASSPATH=${JAVA_HOME}/lib">>/etc/profile
-#RUN echo "export PATH=${JAVA_HOME}/bin:$PATH">>/etc/profile
+RUN echo "export JAVA_HOME=/jdk">>/etc/profile
+RUN echo "export CLASSPATH=${JAVA_HOME}/lib">>/etc/profile
+RUN echo "export PATH=${JAVA_HOME}/bin:$PATH">>/etc/profile
 
 WORKDIR /eclipse/
 RUN tar zxvf eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -C /eclipse/
@@ -38,5 +38,5 @@ ENTRYPOINT ["./.bashrc"]
 #    chown ${uid}:${gid} -R /home/developer
 
 #USER developer
-#ENV HOME /home/developer
-#CMD /eclipse/eclipse/eclipse
+ENV HOME /home/developer
+CMD /eclipse/eclipse/eclipse
